@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Netflix</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<form>
+    <div class="section1">
+        <h1 class="subsection1">
+            Netflix viewing History <br>
+            <h4 class="subsection3">File Name</h4><br>
+            <label class="subsection4" for="showName"></label>
+            <label for="showFile"></label>
+            <input class="section8" type="text" id="showFile" name="showFile" maxlength="60" size="60"><br>
+            <input class="section9" type="text" id="showName" name="showName" maxlength="90" size="90"><br>
+            <button class="section_box" onclick="myFunction()">Search</button>
+        </h1>
+    </div>
+</form>
+
+<script>
+    function myFunction()
+    {
+        const information = document.getElementById("showName").value;
+
+    }
+    function readFile()
+    {
+        document.getElementById('file').onchange = function () {
+            const file = this.files[0];
+            const reader = new FileReader();
+            reader.onload = function (progressEvent) {
+                const fileContentArray = this.result.split(/\r\n|\n/);
+                for (let line = 0; line < lines.length - 1; line++) {
+                    console.log(line + " --> " + lines[line]);
+                }
+            };
+            reader.readAsText(file);
+        };
+    }
+</script>
+</body>
+</html>
+
+
+
+CSS
+
+.subsection1
+{
+    text-align: center;
+}
+.subsection3
+{
+    text-align: center;
+}
+
+.section_box
+{
+    color: black;
+    font-weight: bold;
+}
+.section8
+{
+    text-align: center;
+}
+
